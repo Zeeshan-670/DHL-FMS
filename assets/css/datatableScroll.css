@@ -1,0 +1,53 @@
+.dataTables_wrapper
+  .dataTables_scroll
+  div.dataTables_scrollBody
+  > table
+  > thead
+  > tr
+  > th,
+.dataTables_wrapper
+  .dataTables_scroll
+  div.dataTables_scrollBody
+  > table
+  > thead
+  > tr
+  > td,
+.dataTables_wrapper
+  .dataTables_scroll
+  div.dataTables_scrollBody
+  > table
+  > tbody
+  > tr
+  > th,
+.dataTables_wrapper
+  .dataTables_scroll
+  div.dataTables_scrollBody
+  > table
+  > tbody
+  > tr
+  > td {
+  vertical-align: baseline !important;
+}
+
+.dataTables_scrollBody::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+}
+
+.dataTables_scrollBody::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.dataTables_scrollBody::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: none;
+}
+
+.dataTables_scrollBody {
+  min-height: 400px;
+}
+
+.dataTables_scroll {
+  text-align: center;
+}
