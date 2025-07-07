@@ -24,8 +24,8 @@ jobs:
         with:
           languages: php
 
-      - name: Manual setup step (not required for PHP)
-        run: echo "PHP does not require build step."
+      - name: PHP has no build step
+        run: echo "No build step needed for PHP"
 
-      - name: Run CodeQL analysis
+      - name: Run CodeQL Analysis
         uses: github/codeql-action/analyze@v3
