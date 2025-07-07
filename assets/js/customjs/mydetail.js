@@ -68,8 +68,6 @@ document.getElementById('updatePassword').addEventListener('submit', function (e
             success: function (data) {
                 if (data.success) {
                     showNotification('success', 'Password updated successfully');
-
-                    // Redirect to login page after a short delay to show notification
                     setTimeout(function () {
                         window.location.href = 'index.php';
                     }, 2000); // 2 seconds delay for notification to show

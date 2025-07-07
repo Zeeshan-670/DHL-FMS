@@ -91,13 +91,7 @@
                                                         <input type="text" id="exDepartment" class="form-control"
                                                             placeholder="Enter Department" required readonly>
                                                     </div>
-                                                    <!-- <div class="col-md-2">
-                                                    <label class="form-label" for="exCostCenter">Cost Center</label>
-                                                    <input type="text" id="exCostCenter" class="form-control"
-                                                        placeholder="Enter Cost Center" required readonly>
-                                                </div> -->
-
-                                                    <!-- <div class="form-seprator my-4" style="border: 1px dashed #D4051126;"></div> -->
+                                                
 
                                                 </div>
                                                 <div class="row mt-2">

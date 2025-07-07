@@ -233,9 +233,6 @@ function handleEdit(button) {
         })
         .prop('selected', true)
         .change();
-    // $('#udstation').val(station).change();
-    // $('#uddesignation').val(designation).change();
-    // $('#udaccess').val(access).change();
     console.log(signatureUrl || '-');
 
     if (signatureUrl != 'null') {

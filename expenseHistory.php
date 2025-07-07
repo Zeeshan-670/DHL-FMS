@@ -10,10 +10,6 @@
         <?php include 'include/menu.php';?>
         <!-- Left Sidebar End -->
         <?php include 'include/sidebar.php';?>
-
-        <!-- ============================================================== -->
-        <!-- Start right Content here -->
-        <!-- ============================================================== -->
         <div class="main-content" id="main-content" >
             <div class="page-content">
                 <div class="container-fluid">
@@ -74,10 +70,6 @@
                                         <table class="table w-100" id="expenseHistroyTable" style="font-size: 12px;">
                                             <thead>
                                                 <tr>
-                                                    <!-- <th>S.No</th>
-                                                    <th>Reg No</th>
-                                                    <th>Expense Amount</th>
-                                                    <th>Expense Description</th> -->
                                                 </tr>
                                             </thead>
                                             <tbody id="expenseHistroyTbody">

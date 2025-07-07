@@ -1,14 +1,4 @@
-// // populate vendor
-// populateDataFromApi(
-//   'vendor',
-//   'vendorid',
-//   'vendorname',
-//   'sltVendor',
-//   'Select Vendor'
-// );
-
 $(document).ready(function () {
-  // Function to handle vehicle search for both fields
   async function handleVehicleSearch(e, type) {
     e.preventDefault();
     console.log('Submit event triggered for:', type); // Debugging
@@ -131,38 +121,6 @@ function populateDataVendor() {
 }
 
 populateDataVendor()
-
-
-
-// Add event listener for "job" search
-// document
-//   .getElementById('jobSearch')
-//   .addEventListener('submit', function (e) {
-//     e.preventDefault();
-//     handleVehicleSearch(e, 'job');
-//   });
-
-// // Add event listener for "workorder" search
-// document
-//   .getElementById('workorderSearch')
-//   .addEventListener('submit', function (e) {
-//     e.preventDefault();
-//     handleVehicleSearch(e, 'workorder');
-//   });
-
-// Add "Enter" key support for both input fields
-// ['jobsearchVeh', 'workordersearchVeh'].forEach((field) => {
-//   document.getElementById(field).addEventListener('keydown', function (e) {
-//     if (e.key === 'Enter') {
-//       e.preventDefault();
-//       const type = field === 'jobsearchVeh' ? 'job' : 'workorder';
-//       handleVehicleSearch(e, type);
-//     }
-//   });
-// });
-
-
-// Helper function to populate vehicle data
 function populateWorkOrderVehicleData(data) {
   setDataById('station', data['Station']);
   setDataById('dateField', data['Date']);
@@ -220,7 +178,6 @@ function updateButtonText(inputValue, resultArray) {
   $('#addButton').text(buttonText);
 }
 
-// Event listener for input field to update button text
 $('#addField').on('input', function () {
   const inputValue = $(this).val().trim();
   const resultArray = $('#resultField')
@@ -229,8 +186,6 @@ $('#addField').on('input', function () {
     .map((item) => item.trim());
   updateButtonText(inputValue, resultArray);
 });
-
-// Event listener for button click to add/remove item
 $('#addButton').click(function () {
   const inputValue = $('#addField').val().trim();
   const resultArray = $('#resultField')
@@ -261,17 +216,6 @@ $('#addField').on('keydown', function (e) {
     $('#addButton').click();
   }
 });
-
-// $('#addField').keypress(function (e) {
-
-//   console.log(e);
-//   if (e.which === 13) {
-//     e.preventDefault();
-//     $('#addButton').click();
-//   }
-// });
-
-
 document
   .getElementById('serviceOrderForm')
   .addEventListener('submit', async function (event) {
@@ -377,27 +321,6 @@ document
   .getElementById('serviceJobForm')
   .addEventListener('submit', async function (event) {
     event.preventDefault();
-
-
-    // const getFormData = () => {
-    //   const formData = new FormData();
-    //   const fields = [
-    //     'ctJobTitle',
-    //     'ctregNo',
-    //     'ctsltVendor',
-    //     'ctvid',
-    //     'ctDesc',
-    //   ];
-    //   fields.forEach((field) =>
-    //     formData.append(field, document.getElementById(field).value)
-    //   );
-    //   return formData;
-    // };
-
-    // const formData = getFormData();
-
-    // Validate form data before proceeding
-
     const jobData = new FormData();
     jobData.append('jobtitle', document.getElementById('ctJobTitle').value);
     jobData.append('V_id', document.getElementById('ctvid').value);

@@ -532,20 +532,6 @@ function openQuotationModal(status, id, heading) {
             </div>`;
   modalBody.innerHTML = cardContent;
 
-
-  // ${status === "invoice recieved" && designation === "Manager Fleet" ? `
-  //   <button class="btn btn-success" id="invoiceapproveButton" type="button">Approve</button>
-  //   <button class="btn btn-primary" id="invoiceRejectButton" type="button">Reject</button>
-  // ` : ''}
-
-  // 
-
-  // <button class="btn btn-primary" id="returnButton" type="button">Return</button>
-  // <button class="btn btn-primary" id="returnButton" type="button">Return</button>
-  // ${designation === "Manager Fleet" && status !== "Approve" ? `
-  //   <button class="btn btn-secondary" id="deactivateButton" type="button">Deactivate</button>
-  // ` : ''}
-
   // Show modal
   var statusModal = new bootstrap.Modal(document.getElementById('statusModal'));
   statusModal.show();

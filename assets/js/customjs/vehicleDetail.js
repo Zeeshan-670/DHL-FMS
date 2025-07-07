@@ -1,9 +1,6 @@
 $('#activeVehicledetial').DataTable({
   scrollX: true,
 });
-// $('#deactiveVDTbody').DataTable({
-//   scrollX: true,
-// });
 getVehicleData();
 
 
@@ -222,11 +219,6 @@ function handleEdit(button) {
   $('#edvdICN').val(icn);
   $('#edvdPayload').val(payload);
   $('#edvdMaturityDate').val(maturityDate);
-
-  // Set radio buttons
-  // console.log(pudGtw);
-  // console.log(leasedOwned);
-  // console.log(aiDashMDVR);
   $('input[name="edvdpudGtw"][value="' + pudGtw + '"]').prop('checked', true);
   $('input[name="edvdleasedOwned"][value="' + leasedOwned + '"]').prop(
     'checked',

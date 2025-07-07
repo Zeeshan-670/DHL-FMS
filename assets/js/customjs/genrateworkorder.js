@@ -1,34 +1,11 @@
-// function generatePdf(data, sendtoMail = false) {
-//     console.log(data);
-//     const map1 = window.open('', 'Map', 'status=0,title=0,height=900,width=900,scrollbars=1');
-//     const form = document.createElement('form');
-//     form.method = 'POST';
-//     form.action = data.status == 'completed' ? 'pdf/index.php' : 'pdf/worderorder.php';
-//     form.target = 'Map';
-//     Object.keys(data).forEach((key) => {
-//         const input = document.createElement('input');
-//         input.type = 'hidden';
-//         input.name = key;
-//         input.value = data[key];
-//         form.appendChild(input);
-//     });
-//     document.body.appendChild(form);
-//     form.submit();
-//     document.body.removeChild(form);
-// }
 function generatePdf(data, sendToMail = false) {
     const mode = sendToMail ? 'email' : 'view';
 
     console.log(data.status);
 
     if (sendToMail) {
-        // Send to email
         const form = new FormData();
-
-        // Add mode to form data
         form.append('mode', mode);
-
-        // Append all data to the FormData object
         Object.keys(data).forEach((key) => {
             form.append(key, data[key]);
         });

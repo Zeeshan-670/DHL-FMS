@@ -53,15 +53,6 @@
         .apexcharts-pan-icon.apexcharts-selected svg {
     stroke: #b00004;
 }
-    
-    /* #editcustomRange::-webkit-slider-thumb {
-        background: #b00004;
-    }
-
-    #editcustomRange::-moz-range-thumb {
-        background: #b00004;
-    } */
-    
     </style>
     <!-- Begin page -->
     <div id="layout-wrapper">
@@ -69,10 +60,6 @@
         <?php include 'include/menu.php'; ?>
         <!-- Left Sidebar End -->
         <?php include 'include/sidebar.php'; ?>
-
-        <!-- ============================================================== -->
-        <!-- Start right Content here -->
-        <!-- ============================================================== -->
         <div class="main-content">
             <div class="page-content">
                 <div class="container-fluid">
@@ -346,14 +333,7 @@
                                                     <div class="col-lg-6">
                                                         <h4 class="card-title mb-4">Fuel</h4>
                                                     </div>
-                                                    <!-- <div class="col-lg-3">
-                                                        <label for="fromDate" class="cust-form-label">Form</label>
-                                                        <input type="date" class="cust-form-control" id="fromDate">
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <label for="toDate" class="cust-form-label">To</label>
-                                                        <input type="date" class="cust-form-control" id="toDate">
-                                                    </div> -->
+                                                   
                                                 </div>
                                                 <div id="fuelChart"
                                                     class="apex-charts" dir="ltr"></div>
@@ -371,14 +351,7 @@
                                                     <div class="col-lg-6">
                                                         <h4 class="card-title mb-4">Distance</h4>
                                                     </div>
-                                                    <!-- <div class="col-lg-3">
-                                                        <label for="fromDate" class="cust-form-label">Form</label>
-                                                        <input type="date" class="cust-form-control" id="fromDate">
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <label for="toDate" class="cust-form-label">To</label>
-                                                        <input type="date" class="cust-form-control" id="toDate">
-                                                    </div> -->
+                                                    
                                                 </div>
     
                                                 <div id="distanceChart"
@@ -394,14 +367,7 @@
                                                     <div class="col-lg-6">
                                                         <h4 class="card-title mb-4">Expense</h4>
                                                     </div>
-                                                    <!-- <div class="col-lg-3">
-                                                        <label for="fromDate" class="cust-form-label">Form</label>
-                                                        <input type="date" class="cust-form-control" id="fromDate">
-                                                    </div>
-                                                    <div class="col-lg-3">
-                                                        <label for="toDate" class="cust-form-label">To</label>
-                                                        <input type="date" class="cust-form-control" id="toDate">
-                                                    </div> -->
+                                                    
                                                 </div>
     
                                                 <div id="expenseChart"
@@ -411,78 +377,12 @@
                                         <!--end card-->
                                     </div>
                                 </div> <!-- end row -->
-                                <!-- <div class="row">
-                                    <div class="col-xl-6">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <h4 class="card-title mb-4">Expense</h4>
-                                                    </div>
-                                                </div>
-    
-                                                <div id="column_chart3"
-                                                    data-colors='["--bs-success","--bs-primary", "--bs-danger"]'
-                                                    class="apex-charts" dir="ltr"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    <div class="col-lg-6">
-                                                        <h4 class="card-title mb-4">Driving License</h4>
-                                                    </div>
-                                                </div>
-    
-    
-                                                <div id="column_chart4"
-                                                    data-colors='["--bs-success","--bs-primary", "--bs-danger"]'
-                                                    class="apex-charts" dir="ltr"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>  -->
+                               
                             </div>
                                 <!-- </div> -->
 
                         </div>
-                        <!-- <div class=" col-lg-3">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="mb-4 d-flex flex-column justify-content-end">
-                                        <button type="button" class="btn btn-primary waves-effect waves-light my-2"
-                                            data-bs-toggle="modal" data-bs-target="#createCustomAlerts">
-                                            <i class="fas fa-exclamation-triangle font-size-16 align-middle me-2"></i> Create Custom Alert
-                                        </button>
-                                        <button type="button" class="btn btn-primary waves-effect waves-light" id="vmButton"
-                                            data-bs-toggle="modal" data-bs-target="#vehicleMaintenance">
-                                            <i class="fas fa-car-crash font-size-16 align-middle me-2"></i> Vehicle Maintenance
-                                        </button>
-                                    </div>
-                                    <div class="d-flex justify-content-between  mb-3 align-items-center">
-                                        <h4 class="card-title mb-0">Alerts</h4>
-                                        <div class="app-search ">
-                                            <div class="position-relative">
-                                                <input type="text" class="form-control" id="searchInput" placeholder="Search Alerts..." onkeyup="filterTimeline()">
-                                                <span class="bx bx-search-alt"></span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="no-data" id="noDataMessage"><a href="javascript: void(0);"><i class="fas fa-exclamation-circle"></i> No Alert Found!</a></p>
-                                    <ul class="verti-timeline list-unstyled" id="eventList">
-                                        
-
-                                    </ul>
-
-
-
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div> -->
+                       
                     </div>
 
                     <!-- end page title -->

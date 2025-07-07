@@ -26,16 +26,6 @@
                                 <div class="card-body">
                                     <form id="createIssue">
                                         <div class="row">
-                                            <!-- <div class="col-md-3">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Select Vehicle</label>
-    
-                                                    <select class="form-control select2"
-                                                    id="vehicleSelect" name="driverCategory[]">
-                                                        
-                                                    </select>
-                                                </div>
-                                            </div> -->
                                             <div class="col-md-2">
                                                 <div class="mb-3">
                                                     <label class="form-label">Select Date</label>
@@ -48,22 +38,7 @@
                                                     <textarea  id="remarks" class="form-control" placeholder="Enter Remarks" rows="1" maxlength="512"></textarea>
                                                 </div>
                                             </div>
-                                            <!-- <div class="col-md-3">
-                                                <div class="mb-3">
-                                                    <label class="form-label">End Date</label>
-                                                    <input type="date" class="form-control" id="EndDate">
-                                                </div>
-                                            </div> -->
-                                            <!-- <div class="col-md-3">
-                                                <div class="mb-3">
-                                                    <label class="form-label">Filter</label>
-                                                  <select class="form-control" id="filterBy">
-                                                    <option value="">Select Filter By</option>
-                                                    <option value="newData">New Data</option>
-                                                    <option value="oldData">Old Data</option>
-                                                  </select>
-                                                </div>
-                                            </div> -->
+                                           
                                         </div>
 
                                         <div class="row">

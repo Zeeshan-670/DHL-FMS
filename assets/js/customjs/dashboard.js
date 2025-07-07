@@ -2,23 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const today = new Date();
   const lastMonth = new Date();
   lastMonth.setMonth(lastMonth.getMonth() - 2);
-  // lastMonth.setDate(lastMonth.getDate() - 7); // Set to 7 days ago
-
   document.getElementById('fromDate').value = lastMonth.toISOString().split("T")[0];
   document.getElementById('toDate').value = today.toISOString().split("T")[0];
 })
-
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   const today = new Date();
-//   const lastWeek = new Date();
-//   lastWeek.setDate(lastWeek.getDate() - 7); // Set to 7 days ago
-
-//   document.getElementById('fromDate').value = lastWeek.toISOString().split("T")[0];
-//   document.getElementById('toDate').value = today.toISOString().split("T")[0];
-// });
-
-
 function fetchStats(start, end, vehicles) {
   const formData = new FormData();
   formData.append("type", "view");
@@ -43,16 +29,12 @@ function fetchStats(start, end, vehicles) {
           const options = { year: 'numeric', month: 'short', day: '2-digit' };
           return date.toLocaleDateString('en-GB', options);  // Format: dd MMM yyyy
         }
-
-        // Combine the distance and fuel data
         const distanceData = Object.keys(data.data.distance).map(date => {
           return {
             X: formatDate(date),  // Formatted date
             Y: data.data.distance[date]  // Distance
           };
         });
-
-        // Optional: If you want to create a second dataset for fuel
         const fuelData = Object.keys(data.data.fuel).map(date => {
           return {
             X: formatDate(date),  // Formatted date
@@ -77,107 +59,18 @@ function fetchStats(start, end, vehicles) {
     },
   });
 }
-
-// function createAreaChart(containerId, dataFromBackend, chartTitle, units, chartColor = '#D40511') {
-//   // Check if the chart already exists and destroy it
-//   if (window[containerId]) {
-//     window[containerId].destroy();
-//   }
-
-//   // Prepare the data for the chart
-//   const seriesData = dataFromBackend.map((data) => {
-//     return {
-//       x: new Date(data.X),
-//       y: data.Y.toFixed()
-//     };
-//   });
-
-//   // Sort the data based on the 'x' value (date)
-//   seriesData.sort((a, b) => new Date(a.x).getTime() - new Date(b.x).getTime());
-
-//   // Set up chart options
-//   var options = {
-//     chart: {
-//       height: 380,
-//       type: "area",
-//       id: containerId
-//     },
-//     series: [
-//       {
-//         name: chartTitle,
-//         data: seriesData
-//       }
-//     ],
-//     dataLabels: {
-//       enabled: false
-//     },
-//     xaxis: {
-//       type: "datetime",
-//       labels: {
-//         formatter: function (val, timestamp, opts) {
-//           return opts.dateFormatter(new Date(timestamp), "dd MMM yyyy");
-//         }
-//       }
-//     },
-//     fill: {
-//       colors: [chartColor]
-//     },
-//     markers: {
-//       size: 4, // Marker size
-//       colors: [chartColor], // Marker color matches line color
-//       strokeWidth: 2,
-//       strokeColors: chartColor,
-//       shape: 'circle', // Shape of the marker
-//       hover: {
-//         size: 8 // Increase marker size on hover
-//       }
-//     },
-//     stroke: {
-//       curve: 'smooth',
-//       width: 4,
-//       colors: [chartColor],
-//       // dashArray: [5, 5] // Dashed line
-//     },
-//     tooltip: {
-//       enabled: true,
-//       x: {
-//         format: "dd MMM yyyy HH:mm"
-//       },
-//       y: {
-//         formatter: function (value) {
-//           return value + ` ${units}`;
-//         }
-//       },
-//       marker: {
-//         show: true,
-//         fillColors: [chartColor]
-//       }
-//     }
-//   };
-
-//   // Initialize and render the new chart
-//   window[containerId] = new ApexCharts(document.querySelector(containerId), options);
-//   window[containerId].render();
-// }
-
 function createAreaChart(containerId, dataFromBackend, chartTitle, units, chartColor = '#4f5057') {
-  // Check if the chart already exists and destroy it
   if (window[containerId]) {
     window[containerId].destroy();
   }
-
-  // Prepare the data for the chart
   const seriesData = dataFromBackend.map((data) => {
     return {
       x: new Date(data.X),
       y: data.Y.toFixed()
     };
   });
-
-  // Sort the data based on the 'x' value (date)
   seriesData.sort((a, b) => new Date(a.x).getTime() - new Date(b.x).getTime());
 
-  // Set up chart options
   var options = {
     chart: {
       height: 300,
@@ -203,24 +96,14 @@ function createAreaChart(containerId, dataFromBackend, chartTitle, units, chartC
       }
     },
     fill: {
-      opacity: 5 // Ensure no fill color is applied
+      opacity: 5
     },
     stroke: {
-      curve: 'smooth', // Smooth curve between points
+      curve: 'smooth',
       width: 1.5,
       colors: [chartColor],
-      // dashArray: [5, 5] // Dashed line
     },
-    // markers: {
-    //   size: 4, // Marker size
-    //   colors: [chartColor], // Marker color matches line color
-    //   strokeWidth: 2,
-    //   strokeColors: chartColor,
-    //   shape: 'circle', // Shape of the marker
-    //   hover: {
-    //     size: 8 // Increase marker size on hover
-    //   }
-    // },
+
     tooltip: {
       enabled: true,
       x: {
@@ -237,88 +120,18 @@ function createAreaChart(containerId, dataFromBackend, chartTitle, units, chartC
       }
     }
   };
-
-  // Initialize and render the new chart
   window[containerId] = new ApexCharts(document.querySelector(containerId), options);
   window[containerId].render();
 }
 
-// function createBarChart(containerId, chartTitle, chartColor = '#4f5057') {
-//   // Check if the chart already exists and destroy it
-//   if (window[containerId]) {
-//     window[containerId].destroy();
-//   }
-
-//   // Sample data for the bar chart
-//   let data = {
-//     Lubes: 9000,
-//     Documents: 3000,
-//     Services: 11000,
-//     Parts: 7000,
-//     Transportation: 4000,
-//     Others: 19000
-//   };
-
-//   const categories = Object.keys(data);
-//   const values = Object.values(data);
-
-//   // Set up chart options
-//   var options = {
-//     chart: {
-//       height: 300,
-//       type: "bar",
-//       id: containerId
-//     },
-//     series: [
-//       {
-//         name: chartTitle,
-//         data: values,
-//         color: chartColor
-//       }
-//     ],
-//     xaxis: {
-//       categories: categories,
-//       labels: {
-//         rotate: -45
-//       }
-//     },
-//     dataLabels: {
-//       enabled: false
-//     },
-//     tooltip: {
-//       enabled: true,
-//       y: {
-//         formatter: function (value) {
-//           return `${value} Pkr`;
-//         }
-//       }
-//     },
-//     plotOptions: {
-//       bar: {
-//         borderRadius: 4,
-//         horizontal: false,
-//         columnWidth: '50%'
-//       }
-//     }
-//   };
-
-//   // Initialize and render the new chart
-//   window[containerId] = new ApexCharts(document.querySelector(containerId), options);
-//   window[containerId].render();
-// }
-
 function createBarChart(containerId, chartTitle) {
-  // Check if the chart already exists and destroy it
   if (window[containerId]) {
     window[containerId].destroy();
   }
-
-  // Function to generate random data values
   function getRandomData() {
     return Array.from({ length: 6 }, () => Math.floor(Math.random() * 100) + 10);
   }
 
-  // Define categories and assign random data
   var categories = ['Week-1', 'Week-2', 'Week-3', 'Week-4', 'Week-5', 'Week-6', 'Week-7', 'Week-8'];
   var seriesData = [
     { name: 'Lubes', data: [44, 55, 41, 67, 22, 43, 27, 44], color: '#4CAF50' },
@@ -329,7 +142,6 @@ function createBarChart(containerId, chartTitle) {
     { name: 'Others', data: [32, 40, 36, 45, 38, 41, 23, 20,], color: '#7bc0f7' }
   ];
 
-  // Set up chart options
   var options = {
     series: seriesData.map(item => ({ name: item.name, data: item.data })),
     chart: {
@@ -533,13 +345,6 @@ function getService() {
           "servicesname",
           "Select Service"
         );
-
-        // let row = "";
-        // res.data.map((el, i) => {
-        //   row += `<tr><td>${++i}</td><td>${el.servicesname}</td><td>${el.creationdate.split(' ')[0]}</td></tr>`;
-        // });
-        // adjustTable(`serviceTable`);
-        // initializeDataTable(`serviceTable`, row);
         document.getElementById("serviceTBody").innerHTML = "";
         res.data.map((el, i) => {
           document.getElementById(
@@ -570,18 +375,7 @@ function getAlert() {
       handleLoader("flex");
     },
     success: function (res) {
-      // console.log("License Response:", res);
       if (res.success && res.data.length > 0) {
-        // res.data.forEach(item => {
-        //     alertArray.push({
-        //         id: item.driverliencesalertid,
-        //         title: "License Expiration",
-        //         description: item.driverlicensetext,
-        //         date: new Date(item.entrydate),
-        //         type: "license"
-        //     });
-        // });
-
         let alertArray = res.data;
 
         let alertList = document.getElementById("eventList");
@@ -594,8 +388,6 @@ function getAlert() {
           document.getElementById("noDataMessage").style.display = "none";
         }
         alertArray.forEach((alert, index) => {
-          // console.log(index);
-          // console.log(alert);
           let listItem = document.createElement("li");
           let formattedDate = moment(alert.entrydate).format("DD MMM");
           listItem.classList.add("event-list");
@@ -640,10 +432,6 @@ function getAlert() {
   });
 }
 
-// Initial Call
-// getAlert();
-
-// Filter Alerts
 
 function filterTimeline() {
   let input = document.getElementById("searchInput").value.toLowerCase();
@@ -664,145 +452,6 @@ function filterTimeline() {
     ? "none"
     : "block";
 }
-
-// Create Custom Alerts
-// document.addEventListener("DOMContentLoaded", function () {
-//   const alertRowsContainer = document.getElementById("alertRows");
-
-//   // Add New Alert Row
-//   document.addEventListener("click", function (event) {
-//     if (event.target.closest(".add-row")) {
-//       let alertRowCount = document.querySelectorAll(".alert-row").length;
-//       if (alertRowCount >= 5) {
-//         showNotification("error", "You can only add up to 5 alerts.");
-//         return;
-//       }
-
-//       const newRow = document.createElement("div");
-//       newRow.classList.add("alert-row", "d-flex", "mb-2");
-//       newRow.innerHTML = `
-//                 <select class="form-select me-2 alert-type" required>
-//                     <option value="">Select Alert Type</option>
-//                     <option value="Fire Extinguisher">Fire Extinguisher</option>
-//                     <option value="First Aid Box">First Aid Box</option>
-//                     <option value="Fitness Certificate">Fitness Certificate</option>
-//                 </select>
-//                 <input type="date" class="form-control me-2 alert-date" required>
-//                 <button type="button" class="btn btn-primary remove-row"><i class="fas fa-minus"></i></button>
-//             `;
-//       alertRowsContainer.appendChild(newRow);
-//     }
-
-//     // Remove Alert Row
-//     if (event.target.closest(".remove-row")) {
-//       event.target.closest(".alert-row").remove();
-//     }
-//   });
-
-//   // Form Submission
-//   document
-//     .getElementById("customAlertForm")
-//     .addEventListener("submit", function (event) {
-//       event.preventDefault(); // Prevent form submission
-
-//       let vehicle = document.getElementById("caVehicleAlert").value;
-//       if (!vehicle) {
-//         showNotification("error", "Please select a vehicle.");
-//         return;
-//       }
-
-//       let alertData = {
-//         vehicle: "12", // Assuming a fixed value or retrieve dynamically
-//         type: "add",
-//         alerts: [],
-//       };
-//       let valid = true;
-
-//       document.querySelectorAll(".alert-row").forEach((row) => {
-//         let alerttype = row.querySelector(".alert-type").value;
-//         let date = row.querySelector(".alert-date").value;
-
-//         if (!alerttype || !date) {
-//           valid = false;
-//         } else {
-//           alertData.alerts.push({ alerttype, date });
-//         }
-//       });
-
-//       // document.querySelectorAll(".alert-row").forEach(row => {
-//       //     let alerttype = row.querySelector(".alert-type").value;
-//       //     let date = row.querySelector(".alert-date").value;
-
-//       //     if (!alerttype || !date) {
-//       //         valid = false;
-//       //     }
-//       //     alertData.push('vehicle', vehicle);
-//       //     alertData.push('type', add);
-
-//       //     alertData.push({ alerttype, date });
-//       // });
-
-//       if (!valid) {
-//         showNotification("error", "All fields are required.");
-//         return;
-//       }
-
-//       console.log({ vehicle, alerts: alertData });
-
-//       $.ajax({
-//         url: "controller/customalert.php",
-//         type: "POST",
-//         contentType: "application/json",
-//         data: JSON.stringify(alertData),
-//         beforeSend: function () {
-//           handleLoader("flex");
-//         },
-//         success: function (response) {
-//           console.log(response);
-//           if (response.success) {
-//             showNotification("success", "Custom Alert add successfully!");
-//             document.getElementById("customAlertForm").reset();
-//             var myModal = bootstrap.Modal.getInstance(
-//               document.getElementById("createCustomAlerts")
-//             );
-//             myModal.hide();
-//             alertRowsContainer.innerHTML = `
-//             <div class="alert-row d-flex mb-2">
-//                 <select class="form-select me-2 alert-type" required>
-//                     <option value="">Select Alert Type</option>
-//                     <option value="Fire Extinguisher">Fire Extinguisher</option>
-//                     <option value="First Aid Box">First Aid Box</option>
-//                     <option value="Fitness Certificate">Fitness Certificate</option>
-//                 </select>
-//                 <input type="date" class="form-control me-2 alert-date" required>
-//                 <button type="button" class="btn btn-success add-row"><i class="fas fa-plus"></i></button>
-//             </div>
-//         `;
-//           } else {
-//             showNotification("error", "Failed to add Custom Alert.");
-//           }
-//         },
-//         error: function (xhr, status, error) {
-//           console.error("Error:", error);
-//           showNotification(
-//             "error",
-//             "An error occurred while submitting the form."
-//           );
-//         },
-//         complete: function () {
-//           handleLoader("none");
-//         },
-//       });
-
-//       // alert("Custom Alert Created Successfully!");
-
-//       // Close Modal
-//       // var myModal = bootstrap.Modal.getInstance(document.getElementById('createCustomAlerts'));
-//       // myModal.hide();
-
-//       // Reset Form
-//     });
-// });
 
 // Vehicle Maintenance
 let checkVMApiCall = false;

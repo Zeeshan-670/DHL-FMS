@@ -137,17 +137,6 @@ $(document).ready(function () {
                     <tfoot><tr><td colspan="${totalColumnIndex}" style="font-weight:bold;">Grand Total:</td><td id="grandTotal" style="font-weight:bold;">0</td><td></td></tr></tfoot>
                 `);
 
-                // if (filterBy === "new") {
-                //     $("#expenseHistroyTable").append(`
-                //     <thead>${tableHeaders}</thead>
-                //     <tbody id="expenseHistroyTbody"></tbody>
-                //     <tfoot><tr><td colspan="${totalColumnIndex}" style="font-weight:bold;">Grand Total:</td><td id="grandTotal" style="font-weight:bold;">0</td></tr></tfoot>
-                // `);
-                // } else {
-
-                // }
-
-
                 if (res.success) {
                     showNotification("success", res.message || "Data Found");
                     document.getElementById("historyTableContainer").style.display = "block";
@@ -235,12 +224,4 @@ $(document).ready(function () {
             },
         });
     });
-
-
-
-
-
 });
-
-
-// $(document).ready(function () { $("#datatable").DataTable(), $("#datatable-buttons").DataTable({ lengthChange: !1, buttons: ["copy", "excel", "pdf", "colvis"] }).buttons().container().appendTo("#datatable-buttons_wrapper .col-md-6:eq(0)"), $(".dataTables_length select").addClass("form-select form-select-sm") });

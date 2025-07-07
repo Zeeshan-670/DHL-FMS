@@ -1,39 +1,3 @@
-// $(document).ready(function () {
-//   if ($.fn.select2) {
-//     // Apply Select2 to all <select> elements
-//     $("select").select2({
-//       placeholder: "Select an option",
-//       allowClear: false,
-//       minimumResultsForSearch: 0
-//     });
-
-//     // Override Bootstrap focus issue for all modals
-//     $.fn.modal.Constructor.prototype._enforceFocus = function () { };
-
-//     // Ensure Select2 dropdowns inside modals work correctly
-//     $("select").each(function () {
-//       if ($(this).closest(".modal").length) {
-//         $(this).select2({
-//           dropdownParent: $(this).closest(".modal"),
-//           placeholder: "Select an option",
-//           allowClear: false,
-//           minimumResultsForSearch: 0
-//         });
-//       }
-//     });
-
-//     // Auto-focus search field when Select2 opens
-//     $(document).on('select2:open', () => {
-//       setTimeout(() => $('.select2-search__field').focus(), 100);
-//     });
-
-//   } else {
-//     console.error("Select2 library not loaded.");
-//   }
-// });
-
-
-
 function getDataById(id, placeHolder = '-') {
   const element = document.getElementById(id);
   if (element) {

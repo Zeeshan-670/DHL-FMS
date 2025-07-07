@@ -65,27 +65,6 @@ if (isset($_SESSION['user_id'])) {
                         <li><a href="./rfqHistory.php"  key="t-full-calendar" class='text-white' style="font-size: 12px;">RFQ / Workorder History</a></li>
                     </ul>
                 </li>
-
-                <!-- <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect" aria-expanded="false">
-                        <i class="fas fa-file-signature"></i>
-                        <span key="t-dashboards">Job / Work Order</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="./workorder.php"  key="t-tui-calendar" class='text-white' style="font-size: 12px;">Job / Work Order Request</a></li>
-                        <li><a href="./workorderHistory.php"  key="t-full-calendar" class='text-white' style="font-size: 12px;">Job / Work Order History</a></li>
-                    </ul>
-                </li> -->
-                <!-- <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect" aria-expanded="false">
-                        <i class="fas fa-file-invoice-dollar"></i>
-
-                        <span key="t-dashboards">Expense</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="./expenseHistory.php" key="t-tui-calendar"  class='text-white' style="font-size: 12px;">Expense History</a></li>
-                    </ul>
-                </li> -->
                 <li>
                     <a href="./expenseHistory.php" class="waves-effect" >
                         <i class="fas fa-file-invoice-dollar"></i>
@@ -98,12 +77,7 @@ if (isset($_SESSION['user_id'])) {
                         <span key="Alerst">Alerts</span>
                     </a>
                 </li>
-                <!-- <li>
-                    <a href="./issues.php" class="waves-effect" >
-                        <i class="fas fa-exclamation-circle"></i>
-                        <span key="Alerst">Issues</span>
-                    </a>
-                </li> -->
+              
                 <li>
                     <a href="./driver.php" class="waves-effect" >
                         <i class="fa-solid fa-people-group"></i>
@@ -149,26 +123,6 @@ if (isset($_SESSION['user_id'])) {
                     </ul>
                 </li>
 
-                <!-- <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect" aria-expanded="false">
-                        <i class="fas fa-file-signature"></i>
-                        <span key="t-dashboards">Job / Work Order</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="./workorder.php"  key="t-tui-calendar" class='text-white' style="font-size: 12px;">Job / Work Order Request</a></li>
-                        <li><a href="./workorderHistory.php"  key="t-full-calendar" class='text-white' style="font-size: 12px;">Job / Work Order History</a></li>
-                    </ul>
-                </li> -->
-                <!-- <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect" aria-expanded="false">
-                        <i class="fas fa-file-invoice-dollar"></i>
-
-                        <span key="t-dashboards">Expense</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="./expenseHistory.php" key="t-tui-calendar"  class='text-white' style="font-size: 12px;">Expense History</a></li>
-                    </ul>
-                </li> -->
                 <li>
                     <a href="./expenseHistory.php" class="waves-effect" >
                         <i class="fas fa-file-invoice-dollar"></i>
@@ -181,12 +135,7 @@ if (isset($_SESSION['user_id'])) {
                         <span key="Alerst">Alerts</span>
                     </a>
                 </li>
-                <!-- <li>
-                    <a href="./issues.php" class="waves-effect" >
-                        <i class="fas fa-exclamation-circle"></i>
-                        <span key="Alerst">Issues</span>
-                    </a>
-                </li> -->
+               
                 <li>
                     <a href="./driver.php" class="waves-effect" >
                         <i class="fa-solid fa-people-group"></i>

@@ -13,9 +13,6 @@
         <!-- Left Sidebar End -->
         <?php include 'include/sidebar.php';?>
 
-        <!-- ============================================================== -->
-        <!-- Start right Content here -->
-        <!-- ============================================================== -->
         <div class="main-content" id="main-content">
             <div class="page-content">
                 <div class="container-fluid">
@@ -39,10 +36,7 @@
                                                     <input type="text" id="username" class="form-control" disabled
                                                         placeholder="User Name">
                                                 </div>
-                                                <!-- <div class="col-md-6 my-3">
-                                                    <label class="form-label" for="password">Password</label>
-                                                    <input type="text" id="password" class="form-control" disabled>
-                                                </div> -->
+                                              
                                                 <div class="col-md-6 my-3">
                                                     <label class="form-label" for="city">City</label>
                                                     <input type="text" id="city" class="form-control" disabled

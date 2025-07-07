@@ -13,9 +13,6 @@
         <!-- Left Sidebar End -->
         <?php include 'include/sidebar.php';?>
 
-        <!-- ============================================================== -->
-        <!-- Start right Content here -->
-        <!-- ============================================================== -->
         <div class="main-content" id="main-content" >
             <div class="page-content">
                 <div class="container-fluid">
